@@ -84,7 +84,7 @@ async function sendPostRequest(url, data) {
       category: category,
       priority: priority,
       description: description,
-      deadline: deadline,
+      deadline:deadline,
     };
   
     // Send the POST request
