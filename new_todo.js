@@ -39,6 +39,60 @@ fetch('http://localhost:8083/api/users')
     .catch(error => {
         console.error('Error:', error);
     });
+// Function to send a POST request
+async function sendPostRequest(url, data) {
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+      const responseData = await response.json();
+      console.log('Success:', responseData);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
+  
+  form.addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the default form submission
+  
+    // Get the selected user name from the dropdown
+    const selectedUserName = document.getElementById('nameDropdown').value;
+  
+    // Find the user ID based on the selected user name
+    const selectedUser = data.find(user => user.name === selectedUserName);
+    if (!selectedUser) {
+      console.error('User not found!');
+      return;
+    }
+  
+    // Get the user ID from the selected user
+    const selectedUserId = selectedUser.id;
+  
+    // Get the other form input values
+    const category = document.getElementById('categoryDropdown').value;
+    const priority = document.getElementById('priorityDropdown').value;
+    const description = document.getElementById('descriptionInput').value;
+    const deadline = document.getElementById('deadlineInput').value;
+  
+    // Construct the data object for the POST request
+    const data = {
+      userid: selectedUserId,
+      category: category,
+      priority: priority,
+      description: description,
+      deadline: deadline,
+    };
+  
+    // Send the POST request
+    sendPostRequest('http://localhost:8083/api/todos', data);
+  });
+ 
+
+
 
 
 
