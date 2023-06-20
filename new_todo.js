@@ -15,6 +15,7 @@ fetch('http://localhost:8083/api/users')
             option.text = user.name;
             dropdown.add(option);
         });
+        return namedata = data
     })
     .catch(error => {
         console.error('Error:', error);
@@ -55,15 +56,15 @@ async function sendPostRequest(url, data) {
       console.error('Error:', error);
     }
   }
-  
-  form.addEventListener('submit', function (event) {
+  const todoform = document.getElementById("newtodo");
+  todoform.addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent the default form submission
   
     // Get the selected user name from the dropdown
     const selectedUserName = document.getElementById('nameDropdown').value;
   
     // Find the user ID based on the selected user name
-    const selectedUser = data.find(user => user.name === selectedUserName);
+    const selectedUser = namedata.find(user => user.name === selectedUserName);
     if (!selectedUser) {
       console.error('User not found!');
       return;
@@ -84,15 +85,9 @@ async function sendPostRequest(url, data) {
       category: category,
       priority: priority,
       description: description,
-      deadline:deadline,
+      deadline: deadline,
     };
   
     // Send the POST request
     sendPostRequest('http://localhost:8083/api/todos', data);
   });
- 
-
-
-
-
-
