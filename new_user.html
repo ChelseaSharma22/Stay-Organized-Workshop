@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Add To-Do</title>
+  <title>New User</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,6 +34,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="new_todo.html">Add To Do</a>
                     </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="new_user.html">Add New User</a>
+                  </li>
                 </ul>
                 <form class="d-flex my-2 my-lg-0">
                     <input class="form-control me-sm-2" type="image" img src="images/organize.png" width="75px" height="75px"> 
@@ -46,49 +49,52 @@
   <main>
 
     <div class="container">
-      <form action="">
+      <form id="newuserForm" class="mt-2">
         <div class="row justify-content-center">
           <div class="col-md-4">
-            <h3 class="text-center mb-4">select a User Name :</h3>
-            <select id="nameDropdown" class="form-control">
-              <option>Loading names...</option>
-            </select>
-
+            <label for="newuserName"><h3 class="text-center mb-4">Enter Your Name :</h3></label>
           </div>
-
           <div class="col-md-4">
-            <h3 class="text-center mb-4">select a category :</h3>
-            <select id="categoryDropdown" class="form-control">
-              <option>Loading names...</option>
-            </select>
-          </div>
-
-
-          <div class="col-md-4">
-            <h3 class="text-center mb-4">select a priority:</h3>
-            <select id="priorityDropdown" class="form-control">
-              <option value="low">Low</option>
-              <option value="medium">Medium</option>
-              <option value="high">High</option>
-            </select>
+            <input type="text" id="newuserName" required>
           </div>
         </div>
 
         <div class="row justify-content-center">
           <div class="col-md-4">
-            <h3 class="text-center mb-4">Enter ToDo Description:</h3>
-            <textarea id="descriptionInput" class="form-control"></textarea>
+            <label for="newuserUserName"><h3 class="text-center mb-4">Create a User Name :</h3></label>
           </div>
-
           <div class="col-md-4">
-            <h3 class="text-center mb-4">Enter ToDo Deadline:</h3>
-            <input type="text" id="deadlineInput" class="form-control" placeholder="Enter deadline">
+            <input type="text" id="newuserUserName" required>
           </div>
         </div>
-        <div>
-          <button >Submit</button>
+
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <h3 class="text-center mb-4">Create a Password :</h3>
+          </div>
+          <div class="col-md-4">
+            <input type="password" id="newuserPassword" required>
+          </div>
         </div>
+
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <h3 class="text-center mb-4">Re-enter the Password :</h3>
+          </div>
+          <div class="col-md-4">
+            <input type="password" id="newuserRePassword" required>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <button type="submit" class="btn btn-success" style="width: fit-content;">Submit</button>
+        </div>
+
       </form>
+
+      <div id="addedinfo">
+
+      </div>
     </div>
 
   </main>
@@ -104,8 +110,7 @@
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
 
-  <script src="new_todo.js"></script>
-
+  <script src="new_user.js"></script>
 </body>
 
 </html>
