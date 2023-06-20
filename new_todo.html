@@ -17,73 +17,54 @@
   <header>
     <!-- place navbar here -->
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
-          <div class="container">
-            <a class="navbar-brand" href="#">Stay Organized</a>
-            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavId">
-                <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="todos.html" target="_blank">To-Do</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="new_todo.html" target="_blank">Add To Do</a>
-                    </li>
-                </ul>
-                <form class="d-flex my-2 my-lg-0">
-                    <input class="form-control me-sm-2" type="image" img src="images/organize.png" width="75px" height="75px"> 
-                </form>
-            </div>
-      </div>
-    </nav>
-    
+
   </header>
   <main>
 
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-4">
-          <h3 class="text-center mb-4">select a User Name :</h3>
-          <select id="nameDropdown" class="form-control">
-            <option>Loading names...</option>
-          </select>
+    <form id="newtodo">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <h3 class="text-center mb-4">select a User Name :</h3>
+            <select id="nameDropdown" class="form-control">
+              <option>Loading names...</option>
+            </select>
 
+          </div>
+
+          <div class="col-md-4">
+            <h3 class="text-center mb-4">select a category :</h3>
+            <select id="categoryDropdown" class="form-control">
+              <option>Loading names...</option>
+            </select>
+          </div>
+
+
+          <div class="col-md-4">
+            <h3 class="text-center mb-4">select a priority:</h3>
+            <select id="priorityDropdown" class="form-control">
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
         </div>
 
-        <div class="col-md-4">
-          <h3 class="text-center mb-4">select a category :</h3>
-          <select id="categoryDropdown" class="form-control">
-            <option>Loading names...</option>
-          </select>
-        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <h3 class="text-center mb-4">Enter ToDo Description:</h3>
+            <textarea id="descriptionInput" class="form-control"></textarea>
+          </div>
 
-
-        <div class="col-md-4">
-          <h3 class="text-center mb-4">select a priority:</h3>
-          <select id="priorityDropdown" class="form-control">
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
-            <option value="high">High</option>
-          </select>
+          <div class="col-md-4">
+            <h3 class="text-center mb-4">Enter ToDo Deadline:</h3>
+            <input type="text" id="deadlineInput" class="form-control" placeholder="Enter deadline">
+          </div>
         </div>
-      </div>
-
-      <div class="row justify-content-center">
-        <div class="col-md-4">
-          <h3 class="text-center mb-4">Enter ToDo Description:</h3>
-          <textarea id="descriptionInput" class="form-control"></textarea>
+        <div>
+          <button >Submit</button>
         </div>
-
-        <div class="col-md-4">
-          <h3 class="text-center mb-4">Enter ToDo Deadline:</h3>
-          <input type="text" id="deadlineInput" class="form-control" placeholder="Enter deadline">
-        </div>
-      </div>
+      </form>
     </div>
 
   </main>
@@ -100,6 +81,8 @@
   </script>
   <script src="new_todo.js"> </script>
 
+
+  <script src="new_todo.js"></script>
 
 </body>
 

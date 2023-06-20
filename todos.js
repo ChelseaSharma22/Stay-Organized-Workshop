@@ -5,6 +5,9 @@ fetch('http://localhost:8083/api/users')
     .then(response => response.json())
     .then(data => {
         const dropdown = document.getElementById('nameDropdown');
+        const defaultDropdown = new Option("Choose The User Name");
+
+        //add default selection
 
         // Clear the initial "Loading names..." option
         dropdown.innerHTML = '';
@@ -13,6 +16,8 @@ fetch('http://localhost:8083/api/users')
         data.forEach(user => {
             const option = document.createElement('option');
             option.text = user.name;
+            dropdown.add(defaultDropdown);
+
             dropdown.add(option);
         });
     })
