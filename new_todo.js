@@ -20,6 +20,7 @@ fetch('http://localhost:8083/api/users')
     .catch(error => {
         console.error('Error:', error);
     });
+    
 
     fetch('http://localhost:8083/api/categories')
     

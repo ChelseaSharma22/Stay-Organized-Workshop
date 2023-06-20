@@ -43,6 +43,7 @@ function fetchUserDetails(userId) {
                 const titleCell = document.createElement('td');
                 titleCell.textContent = detail.category;
                 row.appendChild(titleCell);
+  
 
                 const descriptionCell = document.createElement('td');
                 descriptionCell.textContent = detail.description;
@@ -61,6 +62,7 @@ function fetchUserDetails(userId) {
                 //row.appendChild(completedCell);
                 // Create a span element to hold the icon
                 const statusIcon = document.createElement('span');
+                
 
                 // Set the icon based on the completed status
                 if (detail.completed) {
