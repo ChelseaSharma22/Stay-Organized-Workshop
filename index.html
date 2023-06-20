@@ -11,42 +11,84 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
   <header>
     <!-- place navbar here -->
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
-      <div class="container">
-        <a class="navbar-brand" href="#">Stay Organized</a>
-        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" href="index.html" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="todos.html">To-Do</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="new_todo.html">Add To Do</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="new_user.html">Add New User</a>
-              </li>
-            </ul>
-            <form class="d-flex my-2 my-lg-0">
-                <input class="form-control me-sm-2" type="image" img src="./images/organize.png" width="75px" height="75px"> 
-            </form>
-        </div>
-  </div>
-</nav>
-</header>
-  <main>
 
+  
+    <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/types-organizational-structures.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="images/self-organization.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="images/what-is-a-self-organizing-team-700x280.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    
+    <br>
+    <br>
+<!-- "Make check lists" Card-->
+
+<div class="container">
+<div class="row">
+  <div class="col sm-4">
+    <div class="card" style="width: 18rem;">
+      <img src="images/checklist.jpg" class="card-img-top" alt="..." height="360px" width="51px" >
+      <div class="card-body">
+        <h5 class="card-title">Make Check Lists!</h5>
+        <p class="card-text">With Stay Organized you can search for your list and your To-Do list which displays the category,
+           description, deadline, priority in which it needs to be completed and whether or not if it is completed. </p>
+        <a href="todos.html" class="btn btn-primary">Check your List!</a>
+      </div>
+    </div>
+</div>
+    <br>
+    <!---"Add new Tasks" Card-->
+    <div class="col sm-4">
+    <div class="card" style="width: 18rem;">
+      <img src="images/preview.jpg" class="card-img-top" alt="..." height="335px" width="735px">
+      <div class="card-body"> 
+        <h5 class="card-title">Add New Tasks!</h5>
+        <p class="card-text">Stay Organized understands how overwhelming it can be when there are a million tasks to so with more
+           getting added on. We have added a "Add new Task" function in our website so users can keep up to date with their To-Do lists.</p>
+        <a href="new_todo.html" class="btn btn-primary">Add New Task!</a>
+      </div>
+    </div>
+    </div>
+    <br>
+
+    <!--"Check off your finished Tasks" Card-->
+    <div class="col sm-4">
+    <div class="card" style="width: 18rem;">
+      <img src="images/to-do.png" class="card-img-top" alt="..." height="335px" width="335px">
+      <div class="card-body">
+        <h5 class="card-title">Check off your Finished Tasks!</h5>
+        <p class="card-text"> Nothing feels better than checking off your tasks off of your To-Do list and going about your day. Users are able to check their 
+          Tasks off of their To-Do lists digitaly with Stay Organized's "completed" function!
+        </p>
+        <a href="todos.html" class="btn btn-primary">Check off your List!</a>
+      </div>
+    </div>
+
+  </div>
+    
   </main>
   <footer>
     <!-- place footer here -->
