@@ -109,23 +109,4 @@ function handleDelete(event) {
     // Remove the corresponding table row
     const row = event.target.closest('tr');
     row.remove();
-
-    // Get the user ID associated with the deleted row
-    const userId = row.querySelector('td:first-child').textContent;
-
-    // Send a DELETE request to the API server to delete the user
-    const deleteUserUrl = `http://localhost:8083/api/todos/byuser/${userId}`;
-    fetch(deleteUserUrl, {
-        method: 'DELETE'
-    })
-    .then(response => {
-        if (response.ok) {
-            console.log('User deleted successfully.');
-        } else {
-            console.error('Error deleting user:', response.status);
-        }
-    })
-    .catch(error => {
-        console.error('Error deleting user:', error);
-    });
 }
