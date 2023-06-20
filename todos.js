@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 // Fetch data from the API endpoint
 fetch('http://localhost:8083/api/users')
@@ -57,12 +57,8 @@ function fetchUserDetails(userId) {
                 row.appendChild(priorityCell);
 
                 const completedCell = document.createElement('td');
-                //completedCell.textContent = detail.completed ? 'Yes' : 'No';
-                //row.appendChild(completedCell);
-                // Create a span element to hold the icon
                 const statusIcon = document.createElement('span');
 
-                // Set the icon based on the completed status
                 if (detail.completed) {
                     statusIcon.innerHTML = '&#x2713;'; // Checkmark symbol
                     statusIcon.style.color = 'green'; // Set color to green
@@ -71,13 +67,16 @@ function fetchUserDetails(userId) {
                     statusIcon.style.color = 'red'; // Set color to red
                 }
 
-                // Append the status icon to the cell
                 completedCell.appendChild(statusIcon);
-
-                // Add the cell to the row
                 row.appendChild(completedCell);
 
-                // Add the row to the table body
+                const deleteCell = document.createElement('td');
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.addEventListener('click', handleDelete);
+                deleteCell.appendChild(deleteButton);
+                row.appendChild(deleteCell);
+
                 tableBody.appendChild(row);
             });
         })
@@ -105,3 +104,28 @@ document.getElementById('nameDropdown').addEventListener('change', function () {
             console.error('Error:', error);
         });
 });
+
+function handleDelete(event) {
+    // Remove the corresponding table row
+    const row = event.target.closest('tr');
+    row.remove();
+
+    // Get the user ID associated with the deleted row
+    const userId = row.querySelector('td:first-child').textContent;
+
+    // Send a DELETE request to the API server to delete the user
+    const deleteUserUrl = `http://localhost:8083/api/todos/byuser/${userId}`;
+    fetch(deleteUserUrl, {
+        method: 'DELETE'
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log('User deleted successfully.');
+        } else {
+            console.error('Error deleting user:', response.status);
+        }
+    })
+    .catch(error => {
+        console.error('Error deleting user:', error);
+    });
+}
