@@ -9,17 +9,18 @@ function getData() {
     const reenterPass = $("#newuserRePassword")[0].value;
 
     function checkPass(_pass1, _pass2) {
-        if (_pass1 !== _pass2) {
-            displayDiv.innerHTML = `<p>The Password do not match</p>`;
+        if (_pass1 != _pass2) {
+            alert("The Password do not match");
+        } else {
+        const userInfo = {
+            "Name" : userName,
+            "Username" : userUsername,
+            "Password" : userPassword
         }
-    }
+        console.log(userInfo);
+        }
+    }  
     checkPass(userPassword, reenterPass);
-    const userInfo = {
-        "Name" : userName,
-        "Username" : userUsername,
-        "Password" : userPassword
-    }
-    console.log(userInfo);
 }
 
 newuserForm.addEventListener("submit", (e) => {
