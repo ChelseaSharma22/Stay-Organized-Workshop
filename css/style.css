@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(206, 224, 236);
+    background-color: rgb(206, 224, 236) !important ;
 }
 
 .container{
@@ -15,4 +15,5 @@ font-size: large;
 h5{
 font-weight: bold;
 }
+
 
