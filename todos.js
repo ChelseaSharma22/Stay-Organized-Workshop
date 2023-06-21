@@ -70,13 +70,7 @@ function fetchUserDetails(userId) {
                 completedCell.appendChild(statusIcon);
                 row.appendChild(completedCell);
 
-                const deleteCell = document.createElement('td');
-                const deleteButton = document.createElement('button');
-                deleteButton.textContent = 'Delete';
-                deleteButton.addEventListener('click', handleDelete);
-                deleteCell.appendChild(deleteButton);
-                row.appendChild(deleteCell);
-
+                
                 tableBody.appendChild(row);
             });
         })
@@ -105,8 +99,3 @@ document.getElementById('nameDropdown').addEventListener('change', function () {
         });
 });
 
-function handleDelete(event) {
-    // Remove the corresponding table row
-    const row = event.target.closest('tr');
-    row.remove();
-}
